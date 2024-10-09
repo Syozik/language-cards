@@ -1,0 +1,19 @@
+.card{
+    width: 350px;
+    height: 400px;
+    margin: 40px auto;
+    border-radius: 20px;
+    background: rgb(141,180,246);
+    background: linear-gradient(245deg, rgba(141,180,246,1) 0%, rgba(215,191,240,1) 100%);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardWord{
+    margin-bottom: 130px;
+    font-size: 1.7rem;
+    color: black;
+    font-weight: bold;
+}
