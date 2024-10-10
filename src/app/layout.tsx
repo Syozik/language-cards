@@ -7,7 +7,7 @@ export default function RootLayout({
 }>) {
   return (
     <html>
-      <body className="bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#5d6b83] to-[#141429] flex w-full">{children}</body>
+      <body className="bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#5d6b83] to-[#141429] flex flex-col w-full justify-center items-center">{children}</body>
     </html>
   );
 }
