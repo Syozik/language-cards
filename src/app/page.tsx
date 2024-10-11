@@ -6,7 +6,12 @@ import Link from "next/link";
 async function getWord() {
   try {
     const res = { en: "", dk: "" };
-    const response = await fetch("/api/getWord");
+    const response = await fetch("/api/getWord", {
+      cache: "no-store",  // Add this line
+      headers: {
+        'Cache-Control': 'no-cache'  // Add this line
+      }
+    });
     const word = await response.json();
     res.en = word["en_word"];
     res.dk = word["dk_word"];
@@ -36,7 +41,7 @@ export default function Home() {
 
   return (
     <>
-      <Card word={word} />
+      <Card key={word.en + word.dk} word={word} />
 
       <div className="buttons flex gap-[20px]">
         <Link href="/add-word" className="px-4 py-2 bg-[rgb(25,25,25)] text-white font-semibold rounded-lg shadow-md hover:bg-black hover:shadow-lg transition duration-200 ease-in-out transform hover:scale-[1.03]">

@@ -1,6 +1,9 @@
 import { NextResponse } from "next/server";
 import pool from "@/app/api/db_config";
 
+export const dynamic = 'force-dynamic' // or 'force-dynamic'
+export const revalidate = 0
+
 export async function GET() {
   try {
     const words = await pool.query(`
