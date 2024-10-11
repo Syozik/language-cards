@@ -13,7 +13,7 @@ export default function AddWordPairPage() {
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e:any) => {
     e.preventDefault();
     setMessage("");
     setError("");
@@ -41,7 +41,7 @@ export default function AddWordPairPage() {
         setError(data.error || "Failed to add word pair.");
       }
     } catch (err) {
-      setError("An error occurred while adding the word pair.");
+        console.log(err);
     }
   };
 

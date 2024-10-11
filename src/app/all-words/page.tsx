@@ -14,7 +14,6 @@ const AllWordsPage: React.FC = () => {
   const [filteredWords, setFilteredWords] = useState<Word[]>([]);
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchWords = async () => {
@@ -27,8 +26,8 @@ const AllWordsPage: React.FC = () => {
         setWords(data);
         setFilteredWords(data); // Initialize filteredWords with the full word list
         setLoading(false);
-      } catch (err: any) {
-        setError(err.message);
+      } catch (err) {
+        console.log(err);
         setLoading(false);
       }
     };
@@ -49,9 +48,6 @@ const AllWordsPage: React.FC = () => {
     return <p className="mt-[40px]">Loading words...</p>;
   }
 
-  if (error) {
-    return <p className="mt-[40px]">Error: {error}</p>;
-  }
 
   return (
     <div className="flex flex-col">

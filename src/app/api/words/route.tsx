@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import pool from "@/app/api/db_config";
 
 export async function GET(){
@@ -7,6 +7,6 @@ export async function GET(){
         return NextResponse.json(res.rows, {status: 200});
     }
     catch(err){
-        return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
+        return NextResponse.json({ error: err }, { status: 500 });
     }
 }

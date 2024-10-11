@@ -7,6 +7,7 @@ export async function PUT(request: NextRequest){
         await pool.query(`INSERT INTO WORDS ("en_word", "dk_word") VALUES ($1, $2);`, [en_word, dk_word]);
         return NextResponse.json({message: "The word has been inserted successfully."}, {status: 200});
     } catch(err){
-        return NextResponse.json({error: "There's been an error", details: err.message}, {status: 500})
+        console.log(err);
+        return NextResponse.json({error: "There's been an error"}, {status: 500})
     }
 }

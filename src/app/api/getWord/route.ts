@@ -1,7 +1,7 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import pool from "@/app/api/db_config";
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     const words = await pool.query(`
         SELECT * FROM words

@@ -1,5 +1,4 @@
 "use client";
-import styles from "./page.module.css";
 import Card from "@/app/components/card";
 import { useState, useEffect } from "react";
 import Link from "next/link";
